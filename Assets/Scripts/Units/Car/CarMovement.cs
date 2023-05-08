@@ -25,8 +25,6 @@ public class CarMovement : MonoBehaviour
     public void OnMove(InputValue input)
     {
         inputValue = input.Get<Vector2>();
-
-        print(inputValue);
     }
 
     private void Direction()
