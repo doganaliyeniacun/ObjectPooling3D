@@ -19,12 +19,13 @@ public class CarMovement : MonoBehaviour
     private void Update()
     {
         rb.velocity = Vector3.forward * speed;
-        Direction();
     }
 
     public void OnMove(InputValue input)
     {
         inputValue = input.Get<Vector2>();
+
+        Direction();
     }
 
     private void Direction()
@@ -34,8 +35,13 @@ public class CarMovement : MonoBehaviour
             return;
         }
 
-        float xPos = transform.position.x + inputValue.x * Time.deltaTime * speed;
-        xPos = Mathf.Clamp(xPos, -maxX + startPos, maxX + startPos);
-        transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
+        Vector3 movement = new Vector3(inputValue.x > 0 ? startPos + maxX * 2 : startPos - maxX * 2, transform.position.y, transform.position.z);
+        
+        if (startPos != transform.position.x)
+        {
+            movement = new Vector3(startPos, transform.position.y, transform.position.z);
+        }
+        
+        rb.MovePosition(movement);
     }
 }

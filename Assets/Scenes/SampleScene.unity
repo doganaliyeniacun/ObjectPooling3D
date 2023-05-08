@@ -772,7 +772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 808711571}
   speed: 20
-  maxX: 6
+  maxX: 2.5
 --- !u!114 &808711577
 MonoBehaviour:
   m_ObjectHideFlags: 0
