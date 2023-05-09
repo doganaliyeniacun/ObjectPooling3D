@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,4 +35,9 @@ public class RoadPool : MonoBehaviour
         pool.Add(firstObject);
     }
 
+    public GameObject GetSecondaryObject()
+    {
+
+        return pool[2];
+    }
 }
