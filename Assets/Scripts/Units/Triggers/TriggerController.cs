@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class TriggerController : MonoBehaviour
 {
-    public const string RoadTrigger = "RoadTrigger";
-    public const string Vehicles = "Vehicles";
+    public const string ROAD_TRIGGER = "RoadTrigger";
+    public const string VEHICLES = "Vehicles";
 
     [SerializeField] private RoadPool roadPool;
 
@@ -11,12 +11,12 @@ public class TriggerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(RoadTrigger))
+        if (other.CompareTag(ROAD_TRIGGER))
         {
             roadPool?.AddToQueue();
         }
 
-        if (other.CompareTag(Vehicles))
+        if (other.CompareTag(VEHICLES))
         {
             GameplayManager.Instance.ReturnStartPosition();
             HealthManager.Instance.DecrementHealth();

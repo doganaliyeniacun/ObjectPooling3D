@@ -1,4 +1,0 @@
-# ObjectPooling3D
-
-## Trailer
-
